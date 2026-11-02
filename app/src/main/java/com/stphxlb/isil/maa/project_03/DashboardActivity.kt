@@ -3,17 +3,11 @@ package com.stphxlb.isil.maa.project_03
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -31,16 +25,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.stphxlb.isil.maa.project_03.components.ChoiceChip
+import com.stphxlb.isil.maa.project_03.components.DrinkCard
+import com.stphxlb.isil.maa.project_03.components.FeaturedDrink
 import com.stphxlb.isil.maa.project_03.components.HazeDestination
 import com.stphxlb.isil.maa.project_03.components.HazeScaffold
-import com.stphxlb.isil.maa.project_03.ui.theme.AppAccent
 import com.stphxlb.isil.maa.project_03.ui.theme.AppForeground
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppSurface
@@ -116,6 +106,7 @@ fun HomeScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
                 .padding(horizontal = AppTheme.spacing.large),
+            contentPadding = PaddingValues(vertical = AppTheme.spacing.medium),
             verticalArrangement = Arrangement.spacedBy(AppTheme.spacing.medium)
         ) {
             item {
@@ -197,64 +188,6 @@ fun HomeScreen(
                     }
                 }
             }
-        }
-    }
-}
-
-// La tabla no tiene foto. Uso start_photo en todas las tarjetas.
-@Composable
-fun FeaturedDrink(product: Product, onClick: () -> Unit) {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(240.dp)
-            .clip(RoundedCornerShape(24.dp))
-            .clickable(onClick = onClick)
-    ) {
-        Image(
-            painter = painterResource(R.drawable.start_photo),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
-        )
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.Black.copy(alpha = 0.45f))
-                .padding(AppTheme.spacing.medium),
-            verticalArrangement = Arrangement.Bottom
-        ) {
-            Text(product.category, color = AppAccent)
-            Text(
-                product.name,
-                style = MaterialTheme.typography.titleLarge,
-                color = Color.White
-            )
-            Text(money(product.price.toPrice()), color = AppPrimary)
-        }
-    }
-}
-
-@Composable
-fun DrinkCard(product: Product, onClick: () -> Unit) {
-    Column(
-        modifier = Modifier
-            .width(160.dp)
-            .clip(RoundedCornerShape(20.dp))
-            .background(AppSurface)
-            .clickable(onClick = onClick)
-    ) {
-        Image(
-            painter = painterResource(R.drawable.start_photo),
-            contentDescription = null,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(110.dp),
-            contentScale = ContentScale.Crop
-        )
-        Column(modifier = Modifier.padding(AppTheme.spacing.small)) {
-            Text(product.name, style = MaterialTheme.typography.titleLarge, maxLines = 2)
-            Text(money(product.price.toPrice()), color = AppPrimary)
         }
     }
 }

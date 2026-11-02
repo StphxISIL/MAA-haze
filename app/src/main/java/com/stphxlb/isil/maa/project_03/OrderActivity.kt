@@ -24,6 +24,7 @@ import androidx.compose.ui.res.stringResource
 import com.stphxlb.isil.maa.project_03.components.ChoiceChip
 import com.stphxlb.isil.maa.project_03.components.EmberButton
 import com.stphxlb.isil.maa.project_03.components.HazeDestination
+import com.stphxlb.isil.maa.project_03.components.HazeDialog
 import com.stphxlb.isil.maa.project_03.components.HazeScaffold
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppTheme
@@ -32,7 +33,7 @@ import com.stphxlb.isil.maa.project_03.ui.theme.edgeToEdgeDark
 
 // Tu pedido, la tercera pantalla de la plantilla. En la barra de abajo es Pedido.
 // Delivery o Recojo solo cambia el chip. No hay costo de envío en la base.
-// Hacer pedido vacía el carrito y deja un texto. No llama a ningún PHP.
+// Hacer pedido pregunta con HazeDialog. Si confirmo, vacía el carrito y deja un texto. No llama a ningún PHP.
 class OrderActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +50,7 @@ class OrderActivity : ComponentActivity() {
 fun OrderScreen(onNavigate: (HazeDestination) -> Unit) {
     var delivery by remember { mutableStateOf(true) }
     var placed by remember { mutableStateOf(false) }
+    var confirming by remember { mutableStateOf(false) } // true mientras se ve el aviso
     val total = Cart.lines.sumOf { it.lineTotal() }
 
     HazeScaffold(
@@ -115,15 +117,28 @@ fun OrderScreen(onNavigate: (HazeDestination) -> Unit) {
                     Text(money(total), color = AppPrimary, style = MaterialTheme.typography.titleLarge)
                 }
 
+                // Hacer pedido ya no vacía el carrito de una: primero pregunta.
                 EmberButton(
                     text = stringResource(R.string.order_place),
-                    onClick = {
-                        Cart.clear()
-                        placed = true
-                    },
+                    onClick = { confirming = true },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = AppTheme.spacing.large)
+                )
+            }
+
+            if (confirming) {
+                HazeDialog(
+                    title = stringResource(R.string.order_confirm_title),
+                    message = stringResource(R.string.order_confirm_text, money(total)),
+                    confirmText = stringResource(R.string.order_confirm),
+                    dismissText = stringResource(R.string.order_cancel),
+                    onConfirm = {
+                        Cart.clear()
+                        placed = true
+                        confirming = false
+                    },
+                    onDismiss = { confirming = false }
                 )
             }
         }

@@ -53,6 +53,10 @@ Si no estás de acuerdo, deja de usar la aplicación.
     <string name="order_empty">Todavía no agregaste nada.</string>
     <string name="order_done">Listo. El pedido quedó anotado en esta pantalla.</string>
     <string name="order_total">Total</string>
+    <string name="order_confirm_title">¿Confirmas tu pedido?</string>
+    <string name="order_confirm_text">Vas a pedir por %1$s. Lo preparamos apenas confirmes.</string> <!-- %1$s es el total con S/ -->
+    <string name="order_confirm">Confirmar</string>
+    <string name="order_cancel">Seguir mirando</string>
 
     <!-- la carta, lo que llega de productos.php -->
     <string name="products_title">Carta</string>
