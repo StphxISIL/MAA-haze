@@ -8,6 +8,12 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en el [índice de la documentación](00-docs-index.md).
 
+## lp3.3.2 | Fix | 2026-11-02
+
+**Arreglado: Android Studio marcaba en rojo una carpeta de git que no existe.** El proyecto traía en su configuración una segunda carpeta de git, heredada de cuando estaba en otra ubicación. Se quitó; la app no cambia.
+
+**De dónde salió:** al abrir el proyecto en Android Studio, *Directory Mappings* mostraba esa carpeta en rojo.
+
 ## lp3.3.1 | Docs | 2026-11-02
 
 **La documentación.** Un README como portada y la carpeta `docs/` con cómo usarla, los componentes, cómo está construida, qué hacer cuando falla y este registro.

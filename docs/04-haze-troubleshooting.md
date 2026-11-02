@@ -48,3 +48,7 @@ echo "sdk.dir=$HOME/Android/Sdk" > local.properties
 ```
 
 Además, en el *SDK Manager* tiene que estar instalada la plataforma **Android API 37**.
+
+## Android Studio marca en rojo una carpeta en *Directory Mappings*
+
+`.idea/vcs.xml` apunta a una carpeta de git que ya no existe. Se quita la fila en *Settings › Version Control › Directory Mappings*. Pasó una vez, al copiar el proyecto de carpeta, y se arregló en lp3.3.2.
