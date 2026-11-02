@@ -12,7 +12,7 @@ El nombre viene del vapor que sale de una taza recién servida.
 
 Toda la documentación está en español. Los nombres de carpetas y archivos están en inglés, y el código sigue las convenciones de Kotlin.
 
-Versión actual: **lp3.3.2** | ver el [registro de cambios](docs/05-haze-changelog.md).
+Versión actual: **lp3.3.3** | ver el [registro de cambios](docs/05-haze-changelog.md).
 
 ## Por dónde empezar
 
@@ -48,5 +48,6 @@ La interfaz sigue la plantilla [Ember Coffee Shop](https://www.behance.net/galle
 | Android | `minSdk` 31 (Android 12), `compileSdk` y `targetSdk` 37 |
 | Kotlin | 2.2.10 |
 | Compose | BOM 2026.02.01, Material 3 |
-| Android Gradle Plugin | 9.3.2 |
+| Android Gradle Plugin | 9.4.1 |
+| Gradle | 9.6.0 |
 | Probada en | Pixel 7 Pro físico |

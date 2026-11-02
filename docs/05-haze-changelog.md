@@ -8,6 +8,10 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en el [índice de la documentación](00-docs-index.md).
 
+## lp3.3.3 | Build | 2026-11-02
+
+**Herramientas de compilación al día.** El plugin de Android pasa de 9.3.2 a 9.4.1 y Gradle de 9.5.0 a 9.6.0. Lo propuso Android Studio al abrir el proyecto; la app no cambia y se probó en el celular con estas versiones.
+
 ## lp3.3.2 | Fix | 2026-11-02
 
 **Arreglado: Android Studio marcaba en rojo una carpeta de git que no existe.** El proyecto traía en su configuración una segunda carpeta de git, heredada de cuando estaba en otra ubicación. Se quitó; la app no cambia.
