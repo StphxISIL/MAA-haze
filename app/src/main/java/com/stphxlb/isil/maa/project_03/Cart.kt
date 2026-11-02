@@ -25,6 +25,11 @@ object Cart {
     fun clear() {
         lines.clear()
     }
+
+    // Cuántos cafés hay en total, sumando las cantidades. Es el número del globo de arriba.
+    fun count(): Int {
+        return lines.sumOf { it.quantity }
+    }
 }
 
 // "12,50" o "12.50" pasan a número. Si el texto no es un precio, devuelvo 0.

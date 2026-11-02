@@ -1,6 +1,5 @@
 package com.stphxlb.isil.maa.project_03
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,53 +9,46 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Search
-import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.stphxlb.isil.maa.project_03.components.ChoiceChip
+import com.stphxlb.isil.maa.project_03.components.HazeDestination
+import com.stphxlb.isil.maa.project_03.components.HazeScaffold
 import com.stphxlb.isil.maa.project_03.ui.theme.AppAccent
 import com.stphxlb.isil.maa.project_03.ui.theme.AppForeground
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
-import com.stphxlb.isil.maa.project_03.ui.theme.AppSecondary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppSurface
 import com.stphxlb.isil.maa.project_03.ui.theme.AppTheme
 import com.stphxlb.isil.maa.project_03.ui.theme.Project_03_Theme
 import com.stphxlb.isil.maa.project_03.ui.theme.edgeToEdgeDark
 
-// La home, al estilo de la plantilla Ember.
+// La carta, al estilo de la plantilla Ember. En la barra de abajo es Carta.
 // Antes eran 4 recuadros (Insumos, Baristas, Carta, Reportes). Eso era el menú de clase.
 // Ahora: saludo, buscador, chips de categoría, una tarjeta grande y una fila.
 // Los cafés siguen saliendo del mismo PHP.
@@ -76,9 +68,7 @@ class DashboardActivity : ComponentActivity() {
                     onProductClick = { product ->
                         ProductDetailActivity.open(this, product)
                     },
-                    onOrderClick = {
-                        startActivity(Intent(this, OrderActivity::class.java))
-                    }
+                    onNavigate = { destination -> navigateTo(destination) }
                 )
             }
         }
@@ -101,7 +91,7 @@ fun HomeScreen(
     products: List<Product>,
     status: String,
     onProductClick: (Product) -> Unit,
-    onOrderClick: () -> Unit
+    onNavigate: (HazeDestination) -> Unit
 ) {
     // remember: el texto del buscador y el chip se quedan mientras esta pantalla está abierta
     var query by remember { mutableStateOf("") }
@@ -115,9 +105,11 @@ fun HomeScreen(
         categoryOk && nameOk
     }
 
-    Scaffold(
-        containerColor = MaterialTheme.colorScheme.background,
-        bottomBar = { HomeBar(onOrderClick) }
+    HazeScaffold(
+        title = stringResource(R.string.products_title),
+        selected = HazeDestination.MENU,
+        cartCount = Cart.count(),
+        onNavigate = onNavigate
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier
@@ -126,24 +118,6 @@ fun HomeScreen(
                 .padding(horizontal = AppTheme.spacing.large),
             verticalArrangement = Arrangement.spacedBy(AppTheme.spacing.medium)
         ) {
-            item {
-                Row(
-                    modifier = Modifier.padding(top = AppTheme.spacing.medium),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Image(
-                        painter = painterResource(R.drawable.haze_logo),
-                        contentDescription = stringResource(R.string.logo),
-                        modifier = Modifier.size(40.dp)
-                    )
-                    Text(
-                        stringResource(R.string.app_name),
-                        style = MaterialTheme.typography.titleLarge,
-                        modifier = Modifier.padding(start = AppTheme.spacing.small)
-                    )
-                }
-            }
-
             item {
                 Text(
                     stringResource(R.string.home_greeting),
@@ -282,48 +256,5 @@ fun DrinkCard(product: Product, onClick: () -> Unit) {
             Text(product.name, style = MaterialTheme.typography.titleLarge, maxLines = 2)
             Text(money(product.price.toPrice()), color = AppPrimary)
         }
-    }
-}
-
-// Barra de abajo. Inicio ya es esta pantalla. Pedido abre el carrito.
-@Composable
-fun HomeBar(onOrderClick: () -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(AppSurface)
-            .navigationBarsPadding()
-            .padding(vertical = AppTheme.spacing.small),
-        horizontalArrangement = Arrangement.SpaceEvenly
-    ) {
-        HomeBarItem(
-            icon = Icons.Outlined.Home,
-            label = stringResource(R.string.nav_home),
-            selected = true,
-            onClick = {}
-        )
-        HomeBarItem(
-            icon = Icons.Outlined.ShoppingCart,
-            label = stringResource(R.string.nav_order),
-            selected = false,
-            onClick = onOrderClick
-        )
-    }
-}
-
-@Composable
-fun HomeBarItem(
-    icon: ImageVector,
-    label: String,
-    selected: Boolean,
-    onClick: () -> Unit
-) {
-    val tint = if (selected) AppPrimary else AppSecondary
-    Column(
-        modifier = Modifier.clickable(onClick = onClick),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Icon(imageVector = icon, contentDescription = label, tint = tint)
-        Text(label, color = tint)
     }
 }
