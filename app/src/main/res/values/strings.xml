@@ -1,0 +1,66 @@
+<resources>
+    <!--
+        Todo el texto que ve el usuario está acá.
+        En el código pido stringResource(R.string.xxx), no pego la frase en el kt.
+        Si cambio de cafetería, edito este archivo (y las fotos) y las pantallas se quedan.
+    -->
+
+    <string name="app_name">Haze</string>
+    <string name="logo">Logo de la aplicación</string> <!-- lo lee TalkBack en la taza de la portada -->
+
+    <!-- portada, MainActivity -->
+    <string name="quote">Un espresso, sin prisa</string>
+    <string name="author">Stphx</string>
+    <string name="copyright">2026 Todos los derechos reservados</string>
+    <string name="start">Empezar</string>
+    <string name="terms">Términos</string>
+
+    <!-- El párrafo largo se muestra en la portada, al tocar Términos. No es otra pantalla. -->
+    <string name="terms_and_conditions">Términos y condiciones</string>
+    <string name="terms_text">Haze es una aplicación de carta para una cafetería. Al usarla aceptas estas condiciones.
+
+Debes ser mayor de 18 años. Los precios están en soles y son referenciales mientras el proyecto esté en desarrollo.
+
+Los datos de la carta se leen desde el servicio web. No se venden a terceros.
+
+Si no estás de acuerdo, deja de usar la aplicación.
+    </string>
+    <string name="back">Volver</string>
+
+    <!-- Home, la carta al estilo de Ember. Entras desde Empezar, en la portada. -->
+    <string name="title_activity_dashboard">Inicio</string>
+    <string name="home_greeting">Qué se te antoja hoy?</string>
+    <string name="home_search">Busca tu café...</string>
+    <string name="home_all">Todas</string>
+    <string name="home_also">También</string>
+    <string name="home_empty_filter">Nada con ese nombre.</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_order">Pedido</string>
+
+    <!-- detalle de un café -->
+    <string name="detail_size">Tamaño</string>
+    <string name="detail_quantity">Cantidad</string>
+    <string name="detail_add">Agregar al pedido</string>
+    <string name="detail_sold_out">Agotado</string>
+
+    <!-- pedido. No hay servicio de compras: el botón solo confirma en pantalla. -->
+    <string name="order_title">Tu pedido</string>
+    <string name="order_delivery">Delivery</string>
+    <string name="order_pickup">Recojo</string>
+    <string name="order_place">Hacer pedido</string>
+    <string name="order_empty">Todavía no agregaste nada.</string>
+    <string name="order_done">Listo. El pedido quedó anotado en esta pantalla.</string>
+    <string name="order_total">Total</string>
+
+    <!-- la carta, lo que llega de productos.php -->
+    <string name="products_title">Carta</string>
+    <string name="products_loading">Cargando la carta...</string>
+    <string name="products_empty">La carta llegó vacía.</string> <!-- el JSON vino [], no es un error de red -->
+    <string name="products_error">No se pudo leer la carta. Revisa la URL del servicio.</string>
+    <string name="field_category">Categoría</string>
+    <string name="field_price">Precio</string>
+    <string name="field_description">Descripción</string>
+    <string name="field_available">Disponible</string>
+    <string name="product_yes">Sí</string> <!-- disponible = 1 en la tabla -->
+    <string name="product_no">No</string>
+</resources>

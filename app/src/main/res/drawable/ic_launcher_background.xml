@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Fondo del ícono del launcher. Antes era el cuadrado verde con la grilla que deja
+  la plantilla de Android Studio.
+
+  Es el crema de la app (AppBackground en Color.kt), plano y sin degradado: el ícono
+  adaptativo ya se mueve solo cuando el usuario lo toca, y un fondo con dibujo se
+  pelearía con la taza que va encima.
+
+  108x108 es la medida fija de todo ícono adaptativo. El launcher recorta este fondo
+  con la forma que tenga el teléfono (círculo, cuadrado redondeado, gota), por eso
+  cubre los 108 completos y no solo la zona visible.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:pathData="M0,0h108v108h-108z"
+        android:fillColor="#F7F1E8" />
+
+</vector>

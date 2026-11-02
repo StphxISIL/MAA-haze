@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lista de pantallas. Android lee esto para saber el icono, el nombre
+    y cuál se abre primero.
+
+    MainActivity (icono) -> Dashboard (la carta, el JSON) -> detalle -> pedido
+    Términos se ve en la portada, no es otra Activity.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- sin internet no llega el PHP de AlwaysData -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Project_03">
+
+        <!-- la del icono. exported true porque el launcher de Android la tiene que poder abrir -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Project_03"
+            android:windowSoftInputMode="adjustResize">
+            <!-- MAIN + LAUNCHER = esta es la que abre el icono -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- de acá para abajo exported false: solo se abren con startActivity desde la app -->
+
+        <!-- la home: saludo, búsqueda y las tarjetas del JSON. Entra desde Empezar -->
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.Project_03"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- el detalle de un café. Entra al tocar una tarjeta -->
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Project_03"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- el pedido. Entra desde Agregar o desde el icono de abajo -->
+        <activity
+            android:name=".OrderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Project_03"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

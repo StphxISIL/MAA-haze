@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Frente del ícono del launcher: la misma taza de haze_logo.xml, pero sin el platillo.
+
+  El platillo es ancho y bajo, así que en el recorte circular del launcher se le
+  cortaban las puntas. Sin él la taza queda compacta y entra entera en la zona
+  segura, que es el círculo de 66dp del centro: todo lo que se salga de ahí puede
+  desaparecer según la forma de íconos que tenga el teléfono.
+
+  El <group> hace el trabajo de encaje. Las coordenadas de los path siguen siendo
+  las de haze_logo.xml, de 0 a 100, para que las dos taza sean el mismo dibujo y no
+  dos parecidos; el group las agranda 1.3 veces y las corre hasta el centro de los
+  108x108. El trazo se agranda con ellas, de 2 a 2.6, que es lo que necesita para
+  leerse cuando el ícono mide 48dp en la pantalla de inicio.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:scaleX="1.3"
+        android:scaleY="1.3"
+        android:translateX="-13.6"
+        android:translateY="-6.8">
+
+        <!-- el café -->
+        <path
+            android:pathData="M32,46 C32,43.79 39.61,42 49,42 C58.39,42 66,43.79 66,46 C66,48.21 58.39,50 49,50 C39.61,50 32,48.21 32,46 Z"
+            android:fillColor="#C4843C"
+            android:strokeColor="#2C2118"
+            android:strokeWidth="2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- el cuerpo -->
+        <path
+            android:pathData="M32,46 L34.5,62 C35,66 37.5,67.5 41,67.5 L57,67.5 C60.5,67.5 63,66 63.5,62 L66,46"
+            android:strokeColor="#2C2118"
+            android:strokeWidth="2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- el asa -->
+        <path
+            android:pathData="M65.6,51 C74,50.5 75,63 63.8,63.5"
+            android:strokeColor="#2C2118"
+            android:strokeWidth="2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- los dos hilos de vapor -->
+        <path
+            android:pathData="M44,38 C40,34 47,31 43,26"
+            android:strokeColor="#2C2118"
+            android:strokeWidth="2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M55,38 C52,35 57,32.5 54,28.5"
+            android:strokeColor="#2C2118"
+            android:strokeWidth="2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+    </group>
+
+</vector>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tema de la ventana, el de antes de que Compose pinte.
+    NoActionBar para que no salga la barra gris de Android arriba.
+    El fondo oscuro evita un flash blanco al abrir. Los colores de verdad están en Color.kt.
+-->
+<resources>
+    <style name="Theme.Project_03" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#1C140C</item>
+        <item name="android:statusBarColor">#1C140C</item>
+        <item name="android:navigationBarColor">#1C140C</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

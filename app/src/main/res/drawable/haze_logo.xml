@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  El logo de Haze: taza de espresso con platillo.
+  Antes era haze_logo.png (471x542). En vector no se pixelea en ninguna pantalla
+  y pesa unas veinte veces menos.
+
+  viewportWidth/Height = 100 significa que las coordenadas de abajo van de 0 a 100,
+  sin importar los dp que mida al final. Así el dibujo es el mismo a 24dp o a 220dp.
+
+  strokeWidth = 2 es el 2% del ancho: el mismo peso visual que tienen las astas de
+  Urbanist ExtraLight en el nombre "Haze". Si lo subo, el logo vuelve a verse tosco
+  al lado del texto.
+
+  Los colores salen de Color.kt: #F6EDE3 es el trazo (AppForeground) y #E8A15C es el café (AppPrimary).
+  Van escritos a mano porque un Image sin tint respeta los colores del vector, y
+  necesito dos: el trazo crema y el café ámbar. El trazo oscuro desaparecía sobre el fondo.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- El café. La boca de la taza vista de tres cuartos es una elipse, y rellena
+         de ámbar se lee como el espresso adentro. Son cuatro curvas porque el vector
+         de Android no tiene <ellipse>: hay que dibujarla a mano. -->
+    <path
+        android:pathData="M32,46 C32,43.79 39.61,42 49,42 C58.39,42 66,43.79 66,46 C66,48.21 58.39,50 49,50 C39.61,50 32,48.21 32,46 Z"
+        android:fillColor="#E8A15C"
+        android:strokeColor="#F6EDE3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- El cuerpo. Baja desde los dos extremos de la elipse y se cierra abajo con
+         dos curvas cortas, que son las esquinas redondeadas del fondo de la taza. -->
+    <path
+        android:pathData="M32,46 L34.5,62 C35,66 37.5,67.5 41,67.5 L57,67.5 C60.5,67.5 63,66 63.5,62 L66,46"
+        android:strokeColor="#F6EDE3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- El asa. Una sola curva que sale del cuerpo y vuelve a él. -->
+    <path
+        android:pathData="M65.6,51 C74,50.5 75,63 63.8,63.5"
+        android:strokeColor="#F6EDE3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- El platillo. Un arco abierto y muy plano: más curvo parecería un tazón. -->
+    <path
+        android:pathData="M20,71 C22,77.5 76,77.5 78,71"
+        android:strokeColor="#F6EDE3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Los dos hilos de vapor. Distinta altura a propósito: si fueran iguales el
+         dibujo se vería rígido. -->
+    <path
+        android:pathData="M44,38 C40,34 47,31 43,26"
+        android:strokeColor="#F6EDE3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M55,38 C52,35 57,32.5 54,28.5"
+        android:strokeColor="#F6EDE3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+</vector>
