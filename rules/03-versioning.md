@@ -19,6 +19,8 @@ lp3 . 1 . 0
  └─────────── PA       | el proceso de aprendizaje del curso en el que se hizo (lp3 = PA3).
 ```
 
+**`lp` viene de *learning process***, el nombre en inglés de los Procesos de Aprendizaje (PA) del curso. Los nombres del proyecto van en inglés; por eso no es `pa3`. Ver [Versiones](../versions/00-versions-index.md).
+
 **Para subirlo:** manda el nivel más alto que se tocó, y lo que queda a su derecha vuelve a 0.
 
 | Lo que se hizo | De | A |

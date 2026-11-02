@@ -10,6 +10,7 @@ De la más nueva a la más vieja.
 
 | Versión | Fecha | Tipo | Qué pasó |
 |---|---|---|---|
+| [lp3.3.5](lp3.3.5/01-lp3.3.5-changes.md) | 2026-11-02 | Docs III | Queda explicado de dónde sale el prefijo lp y dónde está el repositorio en GitHub. |
 | [lp3.3.4](lp3.3.4/01-lp3.3.4-changes.md) | 2026-11-02 | Docs II | El proyecto trae sus reglas de trabajo, su sistema de versiones e instrucciones para agentes de IA. |
 | [lp3.3.3](lp3.3.3/01-lp3.3.3-changes.md) | 2026-11-02 | Build | Las herramientas de compilación se ponen al día. |
 | [lp3.3.2](lp3.3.2/01-lp3.3.2-changes.md) | 2026-11-02 | Fix | Android Studio ya no marca en rojo una carpeta de git que no existe. |

@@ -12,7 +12,7 @@ El nombre viene del vapor que sale de una taza recién servida.
 
 Toda la documentación está en español. Los nombres de carpetas y archivos están en inglés, y el código sigue las convenciones de Kotlin.
 
-Versión actual: **lp3.3.4** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md).
+Versión actual: **lp3.3.5** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md). `lp3` quiere decir PA3, el Proceso de Aprendizaje 3 del curso (*learning process*, en inglés).
 
 ## Por dónde empezar
 

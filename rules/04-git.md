@@ -10,7 +10,7 @@ Lo que un agente necesita saber para no equivocarse con el repositorio.
 
 ## El repositorio
 
-Es la entrega de la PA3 del curso Aplicaciones Móviles para Android: un repositorio público en GitHub con el historial de commits de features. Cuenta y nombre en GitHub: pendientes de crear.
+Es la entrega de la PA3 del curso Aplicaciones Móviles para Android: un repositorio público en GitHub con el historial de commits de features. Está en **[StphxISIL/MAA-haze](https://github.com/StphxISIL/MAA-haze)**, público, dentro de la organización StphxISIL, con `origin` como remoto. Los demás repositorios de la organización son privados y no tienen relación con este.
 
 La configuración del repositorio en GitHub (visibilidad, descripción, colaboradores) solo se cambia cuando el propietario lo pide.
 
