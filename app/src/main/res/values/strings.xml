@@ -35,7 +35,9 @@ Si no estás de acuerdo, deja de usar la aplicación.
     <string name="home_also">También</string>
     <string name="home_empty_filter">Nada con ese nombre.</string>
     <string name="nav_home">Inicio</string>
+    <string name="nav_menu">Carta</string>
     <string name="nav_order">Pedido</string>
+    <string name="cart_open">Abrir el pedido</string> <!-- lo lee TalkBack en el carrito de arriba -->
 
     <!-- detalle de un café -->
     <string name="detail_size">Tamaño</string>

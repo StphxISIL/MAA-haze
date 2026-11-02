@@ -26,7 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import com.stphxlb.isil.maa.project_03.ui.EmberButton
+import com.stphxlb.isil.maa.project_03.components.EmberButton
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppSecondary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppTheme

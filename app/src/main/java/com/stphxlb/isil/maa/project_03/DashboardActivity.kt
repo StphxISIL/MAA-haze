@@ -46,7 +46,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.stphxlb.isil.maa.project_03.ui.ChoiceChip
+import com.stphxlb.isil.maa.project_03.components.ChoiceChip
 import com.stphxlb.isil.maa.project_03.ui.theme.AppAccent
 import com.stphxlb.isil.maa.project_03.ui.theme.AppForeground
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary

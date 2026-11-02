@@ -39,8 +39,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.stphxlb.isil.maa.project_03.ui.ChoiceChip
-import com.stphxlb.isil.maa.project_03.ui.EmberButton
+import com.stphxlb.isil.maa.project_03.components.ChoiceChip
+import com.stphxlb.isil.maa.project_03.components.EmberButton
 import com.stphxlb.isil.maa.project_03.ui.theme.AppDeep
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppTheme
