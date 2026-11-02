@@ -18,11 +18,4 @@ Todo lo que hace falta para usar, entender y cambiar la app.
 
 ## Cómo se numera
 
-```
-lp3 . 1 . 0
- │    │   └── Retoque  | documentación o un arreglo pequeño.
- │    └────── Feature  | una funcionalidad nueva.
- └─────────── PA3      | el proceso de aprendizaje en el que se hizo.
-```
-
-Manda el nivel más alto que se tocó, y lo que queda a su derecha vuelve a 0. Cada versión es un commit con el título `lp3.X.Y | Qué es` y su etiqueta de git con el mismo número.
+Cada versión es `lp3.X.Y | Tipo`. Cómo se lee el número y la lista de versiones están en [Versiones](../versions/00-versions-index.md).

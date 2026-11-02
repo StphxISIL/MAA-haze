@@ -6,7 +6,11 @@ status: draft
 
 # Registro de cambios de Haze
 
-Cómo llegó a ser lo que es. La numeración está en el [índice de la documentación](00-docs-index.md).
+Cómo llegó a ser lo que es. La numeración está en [Versiones](../versions/00-versions-index.md).
+
+## lp3.3.4 | Docs II | 2026-11-02
+
+**Reglas de trabajo y versiones.** El proyecto explica cómo se escribe, qué nunca se hace, cómo se numera cada versión y cómo se hace un commit, para que cualquier agente de IA lo siga igual. La app no cambia.
 
 ## lp3.3.3 | Build | 2026-11-02
 

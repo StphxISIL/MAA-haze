@@ -12,7 +12,7 @@ El nombre viene del vapor que sale de una taza recién servida.
 
 Toda la documentación está en español. Los nombres de carpetas y archivos están en inglés, y el código sigue las convenciones de Kotlin.
 
-Versión actual: **lp3.3.3** | ver el [registro de cambios](docs/05-haze-changelog.md).
+Versión actual: **lp3.3.4** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md).
 
 ## Por dónde empezar
 
@@ -20,7 +20,9 @@ Versión actual: **lp3.3.3** | ver el [registro de cambios](docs/05-haze-changel
 2. [Los componentes](docs/02-haze-components.md) | qué hace cada pieza reutilizable y qué recibe.
 3. [Cómo está construida](docs/03-haze-architecture.md) | los paquetes, el estado y la navegación, para quien tenga que cambiar el código.
 
-Cada carpeta de documentación tiene su índice en `00-<carpeta>-index.md`. Todo está listado en el [índice de la documentación](docs/00-docs-index.md).
+Si eres un agente de IA, empieza por `AGENTS.md` y por las [reglas de trabajo](rules/00-rules-index.md) antes de tocar nada.
+
+Cada carpeta tiene su índice en `00-<carpeta>-index.md`. La documentación está listada en el [índice de la documentación](docs/00-docs-index.md).
 
 ## Estructura
 
@@ -28,6 +30,8 @@ Cada carpeta de documentación tiene su índice en `00-<carpeta>-index.md`. Todo
 |---|---|
 | `app/` | El proyecto Android: código Kotlin, recursos y fuentes. |
 | `docs/` | La documentación: uso, componentes, arquitectura, problemas y cambios. |
+| `rules/` | Las reglas de trabajo para agentes de IA: cómo escribir, qué nunca hacer, cómo versionar y git. |
+| `versions/` | El registro de versiones, una carpeta por versión. |
 | `gradle/` | El wrapper de Gradle y la lista de versiones de las librerías. |
 
 ## Referente visual
