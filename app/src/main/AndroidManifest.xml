@@ -28,7 +28,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Project_03"
             android:windowSoftInputMode="adjustResize">
             <!-- MAIN + LAUNCHER = esta es la que abre el icono -->
@@ -40,7 +39,7 @@
 
         <!-- de acá para abajo exported false: solo se abren con startActivity desde la app -->
 
-        <!-- la home: saludo, búsqueda y las tarjetas del JSON. Entra desde Empezar -->
+        <!-- la carta: saludo, búsqueda y las tarjetas del JSON. Entra desde Empezar -->
         <activity
             android:name=".DashboardActivity"
             android:exported="false"

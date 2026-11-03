@@ -46,7 +46,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // iconos outlined. Home y el carrito están en el set básico; esta línea se quedó del menú anterior
+    // iconos outlined. Home, Search y el carrito están en el set básico,
+    // pero LocalCafe (barra de abajo) y Remove (cantidad) solo están en este. Sin esta línea no compila.
     implementation(libs.androidx.compose.material.icons.extended)
 
     testImplementation(libs.junit)

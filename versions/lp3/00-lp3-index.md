@@ -10,6 +10,7 @@ De la más nueva a la más vieja.
 
 | Versión | Fecha | Tipo | Qué pasó |
 |---|---|---|---|
+| [lp3.3.6](lp3.3.6/01-lp3.3.6-changes.md) | 2026-11-02 | Fix | Salen los recursos que no eran de la cafetería, atrás desde el pedido vuelve a la carta y los textos se corrigen. |
 | [lp3.3.5](lp3.3.5/01-lp3.3.5-changes.md) | 2026-11-02 | Docs III | Queda explicado de dónde sale el prefijo lp y dónde está el repositorio en GitHub. |
 | [lp3.3.4](lp3.3.4/01-lp3.3.4-changes.md) | 2026-11-02 | Docs II | El proyecto trae sus reglas de trabajo, su sistema de versiones e instrucciones para agentes de IA. |
 | [lp3.3.3](lp3.3.3/01-lp3.3.3-changes.md) | 2026-11-02 | Build | Las herramientas de compilación se ponen al día. |

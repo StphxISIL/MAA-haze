@@ -27,10 +27,10 @@ Si no estás de acuerdo, deja de usar la aplicación.
     </string>
     <string name="back">Volver</string>
 
-    <!-- Home, la carta al estilo de Ember. Entras desde Empezar, en la portada. -->
-    <string name="title_activity_dashboard">Inicio</string>
-    <string name="home_greeting">Qué se te antoja hoy?</string>
-    <string name="home_search">Busca tu café...</string>
+    <!-- La carta, al estilo de Ember. Entras desde Empezar, en la portada. -->
+    <string name="title_activity_dashboard">Carta</string>
+    <string name="home_greeting">¿Qué se te antoja hoy?</string>
+    <string name="home_search">Busca tu café…</string>
     <string name="home_all">Todas</string>
     <string name="home_also">También</string>
     <string name="home_empty_filter">Nada con ese nombre.</string>
@@ -60,11 +60,10 @@ Si no estás de acuerdo, deja de usar la aplicación.
 
     <!-- la carta, lo que llega de productos.php -->
     <string name="products_title">Carta</string>
-    <string name="products_loading">Cargando la carta...</string>
+    <string name="products_loading">Cargando la carta…</string>
     <string name="products_empty">La carta llegó vacía.</string> <!-- el JSON vino [], no es un error de red -->
-    <string name="products_error">No se pudo leer la carta. Revisa la URL del servicio.</string>
+    <string name="products_error">No se pudo cargar la carta. Revisa tu conexión a internet.</string>
     <string name="field_category">Categoría</string>
-    <string name="field_price">Precio</string>
     <string name="field_description">Descripción</string>
     <string name="field_available">Disponible</string>
     <string name="product_yes">Sí</string> <!-- disponible = 1 en la tabla -->

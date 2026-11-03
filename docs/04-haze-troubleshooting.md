@@ -8,7 +8,7 @@ status: draft
 
 Ordenado de lo más probable a lo más raro.
 
-## La carta dice "No se pudo leer la carta"
+## La carta dice "No se pudo cargar la carta"
 
 La app no pudo leer el servicio web. Revisa en este orden:
 

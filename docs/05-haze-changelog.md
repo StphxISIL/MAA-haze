@@ -8,6 +8,14 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en [Versiones](../versions/00-versions-index.md).
 
+## lp3.3.6 | Fix | 2026-11-02
+
+**Atrás desde el pedido vuelve a la carta.** Agregar al pedido cierra el detalle, así que el botón atrás ya no pasa por los cafés que se vieron antes.
+
+**Textos más claros.** El saludo lleva su signo de apertura y, sin internet, la carta pide revisar la conexión.
+
+**Menos peso.** Salen imágenes y fuentes que no se usaban y no eran de la cafetería.
+
 ## lp3.3.4 | Docs II | 2026-11-02
 
 **Reglas de trabajo y versiones.** El proyecto explica cómo se escribe, qué nunca se hace, cómo se numera cada versión y cómo se hace un commit, para que cualquier agente de IA lo siga igual. La app no cambia.

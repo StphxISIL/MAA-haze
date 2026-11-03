@@ -80,6 +80,8 @@ class ProductDetailActivity : ComponentActivity() {
                             )
                         )
                         navigateTo(HazeDestination.ORDER)
+                        // cierro el detalle: atrás desde el pedido vuelve a la carta, no a este café
+                        finish()
                     }
                 )
             }

@@ -10,7 +10,6 @@ import com.stphxlb.isil.maa.project_03.R
 
 // DM Sans, la fuente de la plantilla Ember. Los .ttf están en res/font.
 // FontWeight elige el archivo: Regular, Medium o Bold.
-// Urbanist se quedó en la carpeta, pero ya no la uso.
 val dmSansFamily = FontFamily(
     Font(R.font.dm_sans_regular, FontWeight.Normal),
     Font(R.font.dm_sans_medium, FontWeight.Medium),
@@ -20,8 +19,8 @@ val dmSansFamily = FontFamily(
 // Estilos que Theme.kt le pasa a MaterialTheme.
 // En las pantallas los pido con MaterialTheme.typography.displayLarge, etc.
 // displayLarge  = el nombre "Haze" de la portada
-// headlineLarge = títulos (Empezar, Términos, Tu pedido)
-// titleLarge    = el nombre de cada café
+// headlineLarge = el saludo de la carta y el nombre del café en el detalle
+// titleLarge    = títulos de la barra de arriba y el nombre de cada café en las tarjetas
 // bodyLarge     = el texto normal, cuando no pongo otro style
 val Typography = Typography(
     displayLarge = TextStyle(

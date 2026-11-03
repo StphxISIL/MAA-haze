@@ -80,8 +80,6 @@ fun Project_03_Theme(
     }
 }
 
-// Atajo para no escribir LocalAppSpacing.current en cada pantalla.
-// Uso: Modifier.padding(AppTheme.spacing.large)
 // Los iconos de la hora quedan claros. El fondo es oscuro y si no, no se leen.
 fun ComponentActivity.edgeToEdgeDark() {
     enableEdgeToEdge(
@@ -90,6 +88,8 @@ fun ComponentActivity.edgeToEdgeDark() {
     )
 }
 
+// Atajo para no escribir LocalAppSpacing.current en cada pantalla.
+// Uso: Modifier.padding(AppTheme.spacing.large)
 object AppTheme {
     val spacing: AppSpacing
         @Composable @ReadOnlyComposable

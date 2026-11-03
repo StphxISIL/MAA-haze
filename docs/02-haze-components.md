@@ -6,7 +6,7 @@ status: draft
 
 # Los componentes de Haze
 
-Están en `app/src/main/java/com/stphxlb/isil/maa/project_03/components/`, un archivo por componente.
+Están en `app/src/main/java/com/stphxlb/isil/maa/project_03/components/`. Casi todos tienen su propio archivo; los que van siempre juntos comparten uno (`FeaturedDrink` y `DrinkCard` en `DrinkCards.kt`; `HazeBarItem` y `HazeDestination` junto a `HazeBottomBar`).
 
 ## La regla que siguen todos
 
@@ -55,6 +55,6 @@ Recibe `selected` y `onNavigate`.
 
 ## Por qué así
 
-- **Un archivo por componente**, como en la demo de componentes del curso: se encuentra cada uno por su nombre.
+- **Una carpeta `components/`**, como en la demo de componentes del curso: se encuentra cada uno por su nombre de archivo.
 - **Colores del tema, no sueltos** | los componentes toman los colores de `ui/theme/Color.kt`. Cambiar un color ahí lo cambia en todos.
 - **Las tarjetas salieron de la carta** | antes estaban escritas dentro de `DashboardActivity`. Ahora reciben un `Product` y se pueden usar en cualquier pantalla.
