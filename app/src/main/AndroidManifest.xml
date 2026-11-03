@@ -6,7 +6,8 @@
     MainActivity (icono) -> Dashboard (la carta, el JSON) -> detalle -> pedido
     Términos se ve en la portada, no es otra Activity.
     Las 4 llevan HazeScaffold: arriba el carrito, abajo Inicio, Carta y Pedido.
-    Desde cualquiera se llega a las otras (Navigation.kt).
+    Desde cualquiera se llega a las otras (presentation/navigation/Navigation.kt).
+    Las pantallas @Composable están en presentation/screen/.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">

@@ -8,6 +8,10 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en [Versiones](../versions/00-versions-index.md).
 
+## lp3.3.7 | Fix II | 2026-11-02
+
+**Por dentro, ordenada como en clase.** Las pantallas, la navegación y los datos tienen cada uno su carpeta, y el carrito llega a cada pantalla por parámetro. La app se ve y funciona igual.
+
 ## lp3.3.6 | Fix | 2026-11-02
 
 **Atrás desde el pedido vuelve a la carta.** Agregar al pedido cierra el detalle, así que el botón atrás ya no pasa por los cafés que se vieron antes.

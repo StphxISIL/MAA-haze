@@ -1,7 +1,9 @@
-package com.stphxlb.isil.maa.project_03
+package com.stphxlb.isil.maa.project_03.data.remote
 
 import android.app.Activity
 import android.util.Log
+import com.stphxlb.isil.maa.project_03.R
+import com.stphxlb.isil.maa.project_03.data.model.Product
 import org.json.JSONArray
 import org.json.JSONObject
 import java.net.HttpURLConnection
@@ -9,17 +11,6 @@ import java.net.URL
 
 // URL del PHP en AlwaysData. Si la abro en el navegador tiene que salir un arreglo JSON.
 private const val PRODUCTS_URL = "https://stphxlb.alwaysdata.net/productos.php"
-
-// Una fila de la tabla. Los nombres en inglés son del código.
-// Lo que se ve en pantalla sale de strings.xml y de lo que manda el JSON.
-data class Product(
-    val id: Int,            // idproducto, lo uso de key en la lista, no se muestra
-    val name: String,       // nombre
-    val category: String,   // categoria
-    val price: String,      // precio, llega como texto desde el PHP
-    val description: String,
-    val available: Boolean  // disponible: "1" es sí
-)
 
 // El PHP manda un arreglo: [ { idproducto, nombre, ... }, ... ].
 // mysqli manda los números como texto, por eso getString y después toInt.

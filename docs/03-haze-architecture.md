@@ -10,31 +10,49 @@ Para quien tenga que cambiar el código. Un solo módulo, `app`, con el paquete 
 
 ## Los paquetes
 
+Sigue la demo de componentes del curso (`components/` y `presentation/screen/`) y separa los datos como en la sesión 9 (`data/`). No hay `domain/` ni ViewModel: la app es chica y no los necesita todavía.
+
+```
+project_03/
+├── MainActivity, DashboardActivity, ProductDetailActivity, OrderActivity
+├── components/          las piezas reutilizables
+├── presentation/
+│   ├── screen/          MainScreen, MenuScreen, ProductDetailScreen, OrderScreen
+│   └── navigation/      Navigation.kt: a qué Activity va cada destino
+├── data/
+│   ├── model/           Product, CartLine y las funciones de precio
+│   ├── remote/          ProductService.kt: la llamada al PHP y la lectura del JSON
+│   └── local/           Cart: el carrito en memoria
+└── ui/theme/            colores, fuente, márgenes y tema
+```
+
 | Paquete o archivo | Qué hay |
 |---|---|
-| `MainActivity`, `DashboardActivity`, `ProductDetailActivity`, `OrderActivity` | Las 4 pantallas. Cada Activity arma su pantalla con `setContent` y le pasa las funciones que abren otras pantallas. |
+| Las 4 Activities | Se quedan en la raíz del paquete, como las registra el Manifest. Cada una arma su pantalla con `setContent`, le pasa el estado y conecta sus eventos. |
 | `components/` | Los componentes reutilizables. Ver [Los componentes](02-haze-components.md). |
-| `Navigation.kt` | Qué Activity abre cada destino y la función `navigateTo`. |
-| `Product.kt` | El modelo `Product`, la lectura del JSON y la llamada al servicio web. |
-| `Cart.kt` | El carrito en memoria, el modelo `CartLine` y las funciones de precio. |
+| `presentation/screen/` | Las funciones `@Composable` de cada pantalla. Solo dibujan lo que reciben. |
+| `presentation/navigation/` | Qué Activity abre cada destino y la función `navigateTo`. |
+| `data/model/` | `Product`, `CartLine`, `toPrice`, `lineTotal` y `money`. |
+| `data/remote/` | `fetchProducts` y `parseProducts`: la llamada al servicio web y la lectura del JSON. |
+| `data/local/` | `Cart`, el carrito en memoria. |
 | `ui/theme/` | `Color.kt`, `Type.kt`, `Spacing.kt` y `Theme.kt`: el tema de toda la app. |
 | `res/values/strings.xml` | Todo el texto que ve el usuario. Las pantallas no llevan frases escritas en el código. |
 
 ## Cada pantalla, en dos partes
 
-Cada archivo de pantalla tiene:
+Cada pantalla tiene dos archivos:
 
-1. **La Activity** | sabe de Android: lee el `Intent`, pide los datos y abre otras Activities.
-2. **La función `@Composable` de la pantalla** (`MainScreen`, `HomeScreen`, `ProductDetailScreen`, `OrderScreen`) | solo dibuja. Recibe los datos y funciones como `onNavigate`; no sabe qué Activity hay detrás.
+1. **La Activity** | sabe de Android: lee el `Intent`, pide los datos, abre otras Activities y le pasa a la pantalla el carrito (`cartCount`, las líneas).
+2. **La función `@Composable` de la pantalla** (`MainScreen`, `MenuScreen`, `ProductDetailScreen`, `OrderScreen`, en `presentation/screen/`) | solo dibuja. Recibe los datos y funciones como `onNavigate`; no sabe qué Activity hay detrás.
 
-Así, la interfaz depende solo del estado que recibe, y los eventos suben hasta la Activity, que es la que actúa.
+Así, el estado de la app (la carta y el carrito) baja por parámetros y los eventos suben hasta la Activity, que es la que actúa. Lo único que guarda cada pantalla es su estado de interfaz con `remember`: el texto del buscador, el tamaño elegido o si el aviso está abierto.
 
 ## El estado
 
 | Estado | Dónde vive | Quién lo cambia |
 |---|---|---|
 | La carta (`products`) y el mensaje de carga (`status`) | `DashboardActivity`, con `mutableStateOf` | La llamada al servicio web, al abrir la carta |
-| El texto del buscador y la categoría elegida | `HomeScreen`, con `remember` | El usuario |
+| El texto del buscador y la categoría elegida | `MenuScreen`, con `remember` | El usuario |
 | Tamaño y cantidad | `ProductDetailScreen`, con `remember` | El usuario |
 | El carrito | `Cart`, un `object` con `mutableStateListOf` | Agregar al pedido y Confirmar |
 | Delivery o Recojo, pedido hecho y aviso abierto | `OrderScreen`, con `remember` | El usuario |
@@ -43,7 +61,7 @@ Así, la interfaz depende solo del estado que recibe, y los eventos suben hasta 
 
 ## La navegación
 
-Las pantallas no llaman a `startActivity` para moverse por la barra. Llaman a `onNavigate(destino)`, y cada Activity lo conecta con `navigateTo(destino)` de `Navigation.kt`:
+Las pantallas no llaman a `startActivity` para moverse por la barra. Llaman a `onNavigate(destino)`, y cada Activity lo conecta con `navigateTo(destino)` de `presentation/navigation/Navigation.kt`:
 
 1. `HazeDestination.activityClass()` dice qué Activity corresponde a cada destino: `HOME` es la portada, `MENU` la carta y `ORDER` el pedido.
 2. Si la pantalla actual ya es ese destino, no hace nada.

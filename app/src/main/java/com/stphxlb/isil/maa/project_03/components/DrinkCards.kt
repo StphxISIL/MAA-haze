@@ -21,10 +21,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.stphxlb.isil.maa.project_03.Product
+import com.stphxlb.isil.maa.project_03.data.model.Product
 import com.stphxlb.isil.maa.project_03.R
-import com.stphxlb.isil.maa.project_03.money
-import com.stphxlb.isil.maa.project_03.toPrice
+import com.stphxlb.isil.maa.project_03.data.model.money
+import com.stphxlb.isil.maa.project_03.data.model.toPrice
 import com.stphxlb.isil.maa.project_03.ui.theme.AppAccent
 import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppSurface

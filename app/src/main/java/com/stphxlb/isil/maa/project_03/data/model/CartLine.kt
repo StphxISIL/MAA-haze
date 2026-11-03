@@ -1,6 +1,5 @@
-package com.stphxlb.isil.maa.project_03
+package com.stphxlb.isil.maa.project_03.data.model
 
-import androidx.compose.runtime.mutableStateListOf
 import java.util.Locale
 
 // Una línea del pedido. El precio es el texto del JSON, sin cambiarlo por el tamaño.
@@ -11,26 +10,6 @@ data class CartLine(
     val quantity: Int,
     val price: String
 )
-
-// El carrito vive en memoria mientras la app está abierta.
-// No lo guardo en la base: no hay tabla de pedidos.
-// mutableStateListOf avisa a Compose cuando agrego o borro, y la pantalla se redibuja.
-object Cart {
-    val lines = mutableStateListOf<CartLine>()
-
-    fun add(line: CartLine) {
-        lines.add(line)
-    }
-
-    fun clear() {
-        lines.clear()
-    }
-
-    // Cuántos cafés hay en total, sumando las cantidades. Es el número del globo de arriba.
-    fun count(): Int {
-        return lines.sumOf { it.quantity }
-    }
-}
 
 // "12,50" o "12.50" pasan a número. Si el texto no es un precio, devuelvo 0.
 fun String.toPrice(): Double {
