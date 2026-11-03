@@ -26,6 +26,7 @@ import androidx.compose.ui.res.stringResource
 import com.stphxlb.isil.maa.project_03.R
 import com.stphxlb.isil.maa.project_03.components.ChoiceChip
 import com.stphxlb.isil.maa.project_03.components.DrinkCard
+import com.stphxlb.isil.maa.project_03.components.EmberButton
 import com.stphxlb.isil.maa.project_03.components.FeaturedDrink
 import com.stphxlb.isil.maa.project_03.components.HazeDestination
 import com.stphxlb.isil.maa.project_03.components.HazeScaffold
@@ -43,6 +44,8 @@ fun MenuScreen(
     products: List<Product>,
     cartCount: Int,
     status: String,
+    failed: Boolean,
+    onRetry: () -> Unit,
     onProductClick: (Product) -> Unit,
     onNavigate: (HazeDestination) -> Unit
 ) {
@@ -122,6 +125,10 @@ fun MenuScreen(
 
             if (status.isNotEmpty()) {
                 item { Text(status) }
+                // Solo si falló la red: vuelve a pedir el JSON sin salir de la carta
+                if (failed) {
+                    item { EmberButton(text = stringResource(R.string.products_retry), onClick = onRetry) }
+                }
             } else if (shown.isEmpty()) {
                 item { Text(stringResource(R.string.home_empty_filter)) }
             } else {

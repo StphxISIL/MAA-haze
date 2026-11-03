@@ -24,6 +24,23 @@ class DashboardActivity : ComponentActivity() {
 
         var products by mutableStateOf(emptyList<Product>())
         var status by mutableStateOf("")
+        var failed by mutableStateOf(false) // true si no llegó el JSON: la carta muestra Reintentar
+
+        // Pide la carta. Se llama al abrir y cada vez que se toca Reintentar.
+        fun load() {
+            failed = false
+            status = getString(R.string.products_loading)
+            fetchProducts(
+                onReady = { list ->
+                    products = list
+                    status = if (list.isEmpty()) getString(R.string.products_empty) else ""
+                },
+                onError = { message ->
+                    status = message
+                    failed = true
+                }
+            )
+        }
 
         setContent {
             Project_03_Theme {
@@ -31,6 +48,8 @@ class DashboardActivity : ComponentActivity() {
                     products = products,
                     cartCount = Cart.count(),
                     status = status,
+                    failed = failed,
+                    onRetry = { load() },
                     onProductClick = { product ->
                         ProductDetailActivity.open(this, product)
                     },
@@ -39,15 +58,6 @@ class DashboardActivity : ComponentActivity() {
             }
         }
 
-        status = getString(R.string.products_loading)
-        fetchProducts(
-            onReady = { list ->
-                products = list
-                status = if (list.isEmpty()) getString(R.string.products_empty) else ""
-            },
-            onError = { message ->
-                status = message
-            }
-        )
+        load()
     }
 }

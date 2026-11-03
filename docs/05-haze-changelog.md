@@ -8,6 +8,16 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en [Versiones](../versions/00-versions-index.md).
 
+## lp3.4.0 | Feature IV | 2026-11-02
+
+**Más cerca de Ember.** Los botones llevan el degradado ámbar de la plantilla y la barra de abajo tiene Carta como botón central elevado.
+
+**Tamaños con sus ml.** En el detalle, S, M y L son tarjetas con 300, 400 y 500 ml.
+
+**El pedido se puede editar.** Cada línea tiene foto, botones - y + y una X para quitarla. Si se agrega otra vez el mismo café con el mismo tamaño, se suma a su línea.
+
+**Reintentar.** Si la carta no carga por falta de internet, un botón la vuelve a pedir.
+
 ## lp3.3.7 | Fix II | 2026-11-02
 
 **Por dentro, ordenada como en clase.** Las pantallas, la navegación y los datos tienen cada uno su carpeta, y el carrito llega a cada pantalla por parámetro. La app se ve y funciona igual.

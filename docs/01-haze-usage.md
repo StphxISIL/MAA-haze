@@ -11,15 +11,15 @@ status: draft
 | Pantalla | Qué se hace ahí | En la barra de abajo |
 |---|---|---|
 | **Portada** (`MainActivity`) | Es la que abre el icono. Frase, logo, **Empezar** y **Términos**, que despliega el texto en la misma pantalla. | Inicio |
-| **Carta** (`DashboardActivity`) | Saludo, buscador, chips de categoría, una tarjeta grande con el primer café y una fila con los demás. | Carta |
-| **Detalle** (`ProductDetailActivity`) | Un café: precio, categoría, descripción, si está disponible, tamaño, cantidad y **Agregar al pedido**. | Carta |
-| **Pedido** (`OrderActivity`) | Delivery o Recojo, las líneas del pedido, el total y **Hacer pedido**. | Pedido |
+| **Carta** (`DashboardActivity`) | Saludo, buscador, chips de categoría, una tarjeta grande con el primer café y la fila **Lo más pedido** con los demás. Si no hay internet, muestra **Reintentar**. | Carta |
+| **Detalle** (`ProductDetailActivity`) | Un café: precio, categoría, descripción, si está disponible, las tarjetas de tamaño (S, M o L con sus ml), los botones - y + de la cantidad y **Agregar al pedido**. | Carta |
+| **Pedido** (`OrderActivity`) | Delivery o Recojo, las líneas del pedido (cada una con - y + y una X para quitarla), el total y **Hacer pedido**. | Pedido |
 
 ## Cómo se pasa de una a otra
 
 Las 4 pantallas tienen la misma barra arriba y la misma abajo, así que desde cualquiera se llega a las otras.
 
-- **La barra de abajo** | Inicio abre la portada, Carta abre la carta y Pedido abre el pedido. El botón de la pantalla actual se ve en ámbar.
+- **La barra de abajo** | Inicio abre la portada, Carta abre la carta y Pedido abre el pedido. Carta es el cuadrado ámbar del medio. El texto de la pantalla actual se ve en ámbar.
 - **El carrito de arriba** | abre el pedido. Encima lleva un globo con la cantidad de cafés, que solo aparece si hay algo.
 - **La flecha de arriba** | solo en el detalle. Vuelve a la carta.
 - **Empezar** | en la portada, abre la carta.
@@ -32,7 +32,7 @@ Si una pantalla ya estaba abierta, se trae adelante en vez de abrir otra copia: 
 
 1. En la carta, toca un café.
 2. Elige el tamaño y la cantidad, y toca **Agregar al pedido**.
-3. En el pedido, elige **Delivery** o **Recojo** y revisa el total.
+3. En el pedido, elige **Delivery** o **Recojo**, cambia las cantidades con - y + o quita un café con la X, y revisa el total. Si agregas otra vez el mismo café con el mismo tamaño, se suma a su línea.
 4. Toca **Hacer pedido**. Sale un aviso con el total:
    - **Confirmar** vacía el carrito y deja el mensaje de pedido anotado;
    - **Seguir mirando**, o tocar fuera del aviso, lo cierra sin tocar el carrito.

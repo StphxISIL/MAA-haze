@@ -54,7 +54,8 @@ Así, el estado de la app (la carta y el carrito) baja por parámetros y los eve
 | La carta (`products`) y el mensaje de carga (`status`) | `DashboardActivity`, con `mutableStateOf` | La llamada al servicio web, al abrir la carta |
 | El texto del buscador y la categoría elegida | `MenuScreen`, con `remember` | El usuario |
 | Tamaño y cantidad | `ProductDetailScreen`, con `remember` | El usuario |
-| El carrito | `Cart`, un `object` con `mutableStateListOf` | Agregar al pedido y Confirmar |
+| El carrito | `Cart`, un `object` con `mutableStateListOf` | Agregar al pedido, los botones - y + y la X de cada línea, y Confirmar |
+| Si falló la carga (`failed`) | `DashboardActivity`, con `mutableStateOf` | La llamada al servicio web; Reintentar la vuelve a hacer |
 | Delivery o Recojo, pedido hecho y aviso abierto | `OrderScreen`, con `remember` | El usuario |
 
 `Cart.lines` es una lista que Compose observa: cuando se agrega o se vacía, se redibuja lo que la lee, como el globo del carrito o el total.

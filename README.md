@@ -12,7 +12,7 @@ El nombre viene del vapor que sale de una taza recién servida.
 
 Toda la documentación está en español. Los nombres de carpetas y archivos están en inglés, y el código sigue las convenciones de Kotlin.
 
-Versión actual: **lp3.3.7** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md). `lp3` quiere decir PA3, el Proceso de Aprendizaje 3 del curso (*learning process*, en inglés).
+Versión actual: **lp3.4.0** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md). `lp3` quiere decir PA3, el Proceso de Aprendizaje 3 del curso (*learning process*, en inglés).
 
 ## Por dónde empezar
 
@@ -36,14 +36,14 @@ Cada carpeta tiene su índice en `00-<carpeta>-index.md`. La documentación est�
 
 ## Referente visual
 
-La interfaz sigue la plantilla [Ember Coffee Shop](https://www.behance.net/gallery/255454903/Ember-Coffee-Shop-Mobile-App-UXUI-Design) de Behance: fondo casi negro, botones pastilla en ámbar (`E8A15C`), ámbar claro (`F2BC84`), rojo ladrillo (`A03600`) y la fuente DM Sans.
+La interfaz sigue la plantilla [Ember Coffee Shop](https://www.behance.net/gallery/255454903/Ember-Coffee-Shop-Mobile-App-UXUI-Design) de Behance: fondo casi negro, botones pastilla con degradado ámbar (`E8A15C` a `F2BC84`), ámbar claro (`F2BC84`), rojo ladrillo (`A03600`) y la fuente DM Sans.
 
 ## Qué hace hoy
 
 - **La carta** | se lee de un servicio web PHP publicado en AlwaysData (`productos.php`), con buscador y filtro por categoría.
-- **El detalle** | cada café con su tamaño (S, M o L), su cantidad y si está disponible.
-- **El pedido** | Delivery o Recojo, las líneas, el total y un aviso para confirmar.
-- **Las barras** | la misma barra arriba (con el carrito) y abajo (Inicio, Carta y Pedido) en las 4 pantallas, que quedan unidas entre sí.
+- **El detalle** | cada café con tarjetas de tamaño (S, M o L con sus ml), su cantidad y si está disponible.
+- **El pedido** | Delivery o Recojo, las líneas con - y + y una X para quitarlas, el total y un aviso para confirmar.
+- **Las barras** | la misma barra arriba (con el carrito) y abajo (Inicio, Carta en el botón central y Pedido) en las 4 pantallas, que quedan unidas entre sí.
 
 ## Con qué se construyó
 

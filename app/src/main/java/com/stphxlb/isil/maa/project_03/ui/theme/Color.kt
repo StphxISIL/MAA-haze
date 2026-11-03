@@ -1,5 +1,6 @@
 package com.stphxlb.isil.maa.project_03.ui.theme
 
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 // Paleta de la plantilla Ember (Behance). Antes era crema.
@@ -15,3 +16,7 @@ val AppPrimary = Color(0xFFE8A15C)    // el ámbar de los botones, E8A15C
 val AppSecondary = Color(0xFFB08968)  // texto secundario, menos fuerte que el crema
 val AppAccent = Color(0xFFF2BC84)     // ámbar claro, F2BC84
 val AppDeep = Color(0xFFA03600)       // el rojo ladrillo del tablero, A03600
+
+// El degradado de la plantilla: de ámbar a ámbar claro, de izquierda a derecha.
+// Lo usan EmberButton y el botón central de la barra de abajo.
+val EmberGradient = Brush.horizontalGradient(listOf(AppPrimary, AppAccent))

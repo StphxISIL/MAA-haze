@@ -1,6 +1,7 @@
 package com.stphxlb.isil.maa.project_03.presentation.screen
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,10 +16,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.stphxlb.isil.maa.project_03.R
+import com.stphxlb.isil.maa.project_03.components.CartLineRow
 import com.stphxlb.isil.maa.project_03.components.ChoiceChip
 import com.stphxlb.isil.maa.project_03.components.EmberButton
 import com.stphxlb.isil.maa.project_03.components.HazeDestination
@@ -31,13 +32,17 @@ import com.stphxlb.isil.maa.project_03.ui.theme.AppPrimary
 import com.stphxlb.isil.maa.project_03.ui.theme.AppTheme
 
 // Tu pedido, Pedido en la barra de abajo. Lo dibuja OrderActivity.
-// Recibe las líneas del carrito y avisa con onConfirm; no toca el carrito por su cuenta.
+// Recibe las líneas del carrito y avisa con onIncrease, onDecrease, onRemove y onConfirm;
+// no toca el carrito por su cuenta.
 // Delivery o Recojo solo cambia el chip. No hay costo de envío en la base.
 @Composable
 fun OrderScreen(
     lines: List<CartLine>,
     cartCount: Int,
     onNavigate: (HazeDestination) -> Unit,
+    onIncrease: (index: Int) -> Unit,
+    onDecrease: (index: Int) -> Unit,
+    onRemove: (index: Int) -> Unit,
     onConfirm: () -> Unit
 ) {
     var delivery by remember { mutableStateOf(true) }
@@ -80,19 +85,15 @@ fun OrderScreen(
                     )
                 }
 
-                lines.forEach { line ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = AppTheme.spacing.medium),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Column {
-                            Text(line.name, style = MaterialTheme.typography.titleLarge)
-                            Text(line.size + "  x" + line.quantity)
-                        }
-                        Text(money(line.lineTotal()), color = AppPrimary)
+                // Cada línea avisa con su posición; la Activity cambia el carrito y Compose redibuja.
+                lines.forEachIndexed { index, line ->
+                    Box(modifier = Modifier.padding(top = AppTheme.spacing.medium)) {
+                        CartLineRow(
+                            line = line,
+                            onDecrease = { onDecrease(index) },
+                            onIncrease = { onIncrease(index) },
+                            onRemove = { onRemove(index) }
+                        )
                     }
                 }
 

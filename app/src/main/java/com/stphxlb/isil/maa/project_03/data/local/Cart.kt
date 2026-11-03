@@ -10,8 +10,31 @@ import com.stphxlb.isil.maa.project_03.data.model.CartLine
 object Cart {
     val lines = mutableStateListOf<CartLine>()
 
+    // Si ese café ya está con ese tamaño, sumo la cantidad en vez de repetir la línea.
     fun add(line: CartLine) {
-        lines.add(line)
+        val index = lines.indexOfFirst { it.name == line.name && it.size == line.size }
+        if (index == -1) {
+            lines.add(line)
+        } else {
+            lines[index] = lines[index].copy(quantity = lines[index].quantity + line.quantity)
+        }
+    }
+
+    // CartLine no se cambia por dentro (val): se reemplaza por una copia con otra cantidad.
+    // Asignar lines[index] es lo que avisa a Compose.
+    fun increase(index: Int) {
+        lines[index] = lines[index].copy(quantity = lines[index].quantity + 1)
+    }
+
+    // Con 1 no baja a 0: para quitar el café está la X.
+    fun decrease(index: Int) {
+        if (lines[index].quantity > 1) {
+            lines[index] = lines[index].copy(quantity = lines[index].quantity - 1)
+        }
+    }
+
+    fun remove(index: Int) {
+        lines.removeAt(index)
     }
 
     fun clear() {

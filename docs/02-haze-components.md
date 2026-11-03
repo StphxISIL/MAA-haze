@@ -37,9 +37,9 @@ A la izquierda, la flecha de volver o el logo de Haze. Al medio, el título. A l
 
 Recibe `title`, `cartCount`, `onCartClick` y `onBackClick` (opcional).
 
-### `HazeBottomBar` y `HazeBarItem`
+### `HazeBottomBar`, `HazeBarItem` y `HazeBarCenterItem`
 
-Tres botones: Inicio, Carta y Pedido. `HazeDestination` es la lista de esos tres destinos (`HOME`, `MENU`, `ORDER`). `HazeBarItem` es un botón suelto: icono arriba, texto abajo, ámbar si está elegido y café claro si no.
+Tres botones: Inicio, Carta y Pedido. `HazeDestination` es la lista de esos tres destinos (`HOME`, `MENU`, `ORDER`). `HazeBarItem` es un botón de los lados: icono arriba, texto abajo, ámbar si está elegido y café claro si no. `HazeBarCenterItem` es el del medio, como en la plantilla: un cuadrado con el degradado ámbar que sobresale de la barra (`offset` hacia arriba y sombra).
 
 Recibe `selected` y `onNavigate`.
 
@@ -47,8 +47,11 @@ Recibe `selected` y `onNavigate`.
 
 | Componente | Qué es | Recibe | Dónde se usa |
 |---|---|---|---|
-| `EmberButton` | El botón pastilla ámbar de la plantilla. Apagado, se ve del color de las tarjetas. | `text`, `onClick`, `modifier`, `enabled` | Empezar, Agregar al pedido, Hacer pedido y Confirmar |
-| `ChoiceChip` | Una opción elegible: ámbar si está elegida, del color de las tarjetas si no. | `label`, `selected`, `onClick` | Categorías, tamaños, Delivery y Recojo |
+| `EmberButton` | El botón pastilla de la plantilla, con el degradado de ámbar a ámbar claro (`EmberGradient`). Apagado, se ve del color de las tarjetas. | `text`, `onClick`, `modifier`, `enabled` | Empezar, Reintentar, Agregar al pedido, Hacer pedido y Confirmar |
+| `ChoiceChip` | Una opción elegible: ámbar si está elegida, del color de las tarjetas si no. | `label`, `selected`, `onClick` | Categorías, Delivery y Recojo |
+| `SizeCard` | Una tarjeta de tamaño: la letra y los ml (300, 400 o 500), con borde ámbar si está elegida. | `label`, `volumeMl`, `selected`, `onClick` | El detalle, S, M y L |
+| `QuantityStepper` | Los botones - y + con la cantidad al medio. | `quantity`, `onDecrease`, `onIncrease` | El detalle y cada línea del pedido |
+| `CartLineRow` | Una línea del pedido: foto, nombre, tamaño, precio, `QuantityStepper` y la X para quitarla. | `line`, `onDecrease`, `onIncrease`, `onRemove` | El pedido |
 | `FeaturedDrink` | La tarjeta grande: foto con un velo oscuro, categoría, nombre y precio encima. | `product`, `onClick` | La carta, primer café |
 | `DrinkCard` | La tarjeta chica: foto arriba, nombre y precio abajo. | `product`, `onClick` | La carta, fila de los demás |
 | `HazeDialog` | El aviso de la app, con fondo de tarjeta, bordes de 24 dp y Confirmar como `EmberButton`. | `title`, `message`, `confirmText`, `dismissText`, `onConfirm`, `onDismiss` | Hacer pedido |

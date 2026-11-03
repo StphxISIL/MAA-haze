@@ -32,7 +32,7 @@ Si no estás de acuerdo, deja de usar la aplicación.
     <string name="home_greeting">¿Qué se te antoja hoy?</string>
     <string name="home_search">Busca tu café…</string>
     <string name="home_all">Todas</string>
-    <string name="home_also">También</string>
+    <string name="home_also">Lo más pedido</string>
     <string name="home_empty_filter">Nada con ese nombre.</string>
     <string name="nav_home">Inicio</string>
     <string name="nav_menu">Carta</string>
@@ -42,6 +42,9 @@ Si no estás de acuerdo, deja de usar la aplicación.
     <!-- detalle de un café -->
     <string name="detail_size">Tamaño</string>
     <string name="detail_quantity">Cantidad</string>
+    <string name="size_volume">%1$d ml</string> <!-- los ml de cada tamaño, como en la plantilla -->
+    <string name="quantity_less">Uno menos</string> <!-- lo lee TalkBack en el botón - -->
+    <string name="quantity_more">Uno más</string>
     <string name="detail_add">Agregar al pedido</string>
     <string name="detail_sold_out">Agotado</string>
 
@@ -53,6 +56,8 @@ Si no estás de acuerdo, deja de usar la aplicación.
     <string name="order_empty">Todavía no agregaste nada.</string>
     <string name="order_done">Listo. El pedido quedó anotado en esta pantalla.</string>
     <string name="order_total">Total</string>
+    <string name="order_line_size">Tamaño %1$s</string>
+    <string name="order_remove">Quitar del pedido</string>
     <string name="order_confirm_title">¿Confirmas tu pedido?</string>
     <string name="order_confirm_text">Vas a pedir por %1$s. Lo preparamos apenas confirmes.</string> <!-- %1$s es el total con S/ -->
     <string name="order_confirm">Confirmar</string>
@@ -63,6 +68,7 @@ Si no estás de acuerdo, deja de usar la aplicación.
     <string name="products_loading">Cargando la carta…</string>
     <string name="products_empty">La carta llegó vacía.</string> <!-- el JSON vino [], no es un error de red -->
     <string name="products_error">No se pudo cargar la carta. Revisa tu conexión a internet.</string>
+    <string name="products_retry">Reintentar</string>
     <string name="field_category">Categoría</string>
     <string name="field_description">Descripción</string>
     <string name="field_available">Disponible</string>

@@ -10,7 +10,7 @@ Ordenado de lo más probable a lo más raro.
 
 ## La carta dice "No se pudo cargar la carta"
 
-La app no pudo leer el servicio web. Revisa en este orden:
+La app no pudo leer el servicio web. Primero toca **Reintentar**; si sigue igual, revisa en este orden:
 
 1. **Internet** | el celular o el emulador tiene que estar conectado.
 2. **El servicio** | abre `https://stphxlb.alwaysdata.net/productos.php` en el navegador. Tiene que salir un arreglo JSON.

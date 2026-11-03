@@ -10,7 +10,8 @@ import com.stphxlb.isil.maa.project_03.ui.theme.Project_03_Theme
 import com.stphxlb.isil.maa.project_03.ui.theme.edgeToEdgeDark
 
 // Tu pedido, la tercera pantalla de la plantilla. En la barra de abajo es Pedido.
-// La Activity le pasa a OrderScreen las líneas de Cart y vacía el carrito cuando se confirma.
+// La Activity le pasa a OrderScreen las líneas de Cart y cambia el carrito cuando la pantalla avisa:
+// más, menos, quitar una línea o confirmar (vaciar).
 // No llama a ningún PHP: no hay tabla de pedidos.
 class OrderActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,9 @@ class OrderActivity : ComponentActivity() {
                     lines = Cart.lines,
                     cartCount = Cart.count(),
                     onNavigate = { destination -> navigateTo(destination) },
+                    onIncrease = { index -> Cart.increase(index) },
+                    onDecrease = { index -> Cart.decrease(index) },
+                    onRemove = { index -> Cart.remove(index) },
                     onConfirm = { Cart.clear() }
                 )
             }
