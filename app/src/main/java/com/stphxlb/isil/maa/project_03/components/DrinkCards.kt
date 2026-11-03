@@ -22,7 +22,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.stphxlb.isil.maa.project_03.data.model.Product
-import com.stphxlb.isil.maa.project_03.R
 import com.stphxlb.isil.maa.project_03.data.model.money
 import com.stphxlb.isil.maa.project_03.data.model.toPrice
 import com.stphxlb.isil.maa.project_03.ui.theme.AppAccent
@@ -32,7 +31,7 @@ import com.stphxlb.isil.maa.project_03.ui.theme.AppTheme
 
 // Las dos tarjetas de café de la carta. Estaban dentro de DashboardActivity.
 // Reciben un Product y avisan con onClick; no saben qué pantalla se abre después.
-// La tabla no tiene foto. Uso start_photo en todas las tarjetas.
+// La foto sale de la categoría del café (drinkPhoto).
 @Composable
 fun FeaturedDrink(product: Product, onClick: () -> Unit) {
     Box(
@@ -43,7 +42,7 @@ fun FeaturedDrink(product: Product, onClick: () -> Unit) {
             .clickable(onClick = onClick)
     ) {
         Image(
-            painter = painterResource(R.drawable.start_photo),
+            painter = painterResource(drinkPhoto(product.category)),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -76,7 +75,7 @@ fun DrinkCard(product: Product, onClick: () -> Unit) {
             .clickable(onClick = onClick)
     ) {
         Image(
-            painter = painterResource(R.drawable.start_photo),
+            painter = painterResource(drinkPhoto(product.category)),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()

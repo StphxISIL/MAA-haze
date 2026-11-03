@@ -12,7 +12,7 @@ El nombre viene del vapor que sale de una taza recién servida.
 
 Toda la documentación está en español. Los nombres de carpetas y archivos están en inglés, y el código sigue las convenciones de Kotlin.
 
-Versión actual: **lp3.4.0** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md). `lp3` quiere decir PA3, el Proceso de Aprendizaje 3 del curso (*learning process*, en inglés).
+Versión actual: **lp3.4.1** | ver [Versiones](versions/00-versions-index.md) y el [registro de cambios](docs/05-haze-changelog.md). `lp3` quiere decir PA3, el Proceso de Aprendizaje 3 del curso (*learning process*, en inglés).
 
 ## Por dónde empezar
 
@@ -37,6 +37,18 @@ Cada carpeta tiene su índice en `00-<carpeta>-index.md`. La documentación est�
 ## Referente visual
 
 La interfaz sigue la plantilla [Ember Coffee Shop](https://www.behance.net/gallery/255454903/Ember-Coffee-Shop-Mobile-App-UXUI-Design) de Behance: fondo casi negro, botones pastilla con degradado ámbar (`E8A15C` a `F2BC84`), ámbar claro (`F2BC84`), rojo ladrillo (`A03600`) y la fuente DM Sans.
+
+## Fotos
+
+Las fotos de cada categoría son de [Unsplash](https://unsplash.com) y se usan bajo su licencia, que permite usarlas gratis sin pedir permiso. Se guardaron como `.webp` de 800 px.
+
+| Categoría | Foto |
+|---|---|
+| Espresso | [unsplash.com/photos/6cY1xBGn9ZI](https://unsplash.com/photos/white-ceramic-coffee-mug-with-capuccino-6cY1xBGn9ZI) |
+| Filtro | [unsplash.com/photos/KGR2u2rG6c4](https://unsplash.com/photos/a-coffee-maker-pouring-coffee-into-a-cup-KGR2u2rG6c4) |
+| Frío | [unsplash.com/photos/rzX8bOle9xs](https://unsplash.com/photos/a-glass-filled-with-liquid-and-ice-on-top-of-a-table-rzX8bOle9xs) |
+| Té | [unsplash.com/photos/NOU_wT-jJpM](https://unsplash.com/photos/a-glass-cup-filled-with-liquid-sitting-on-top-of-a-saucer-NOU_wT-jJpM) |
+| Pastelería | [unsplash.com/photos/m9pzwmxm2rk](https://unsplash.com/photos/two-brown-croissants-m9pzwmxm2rk) |
 
 ## Qué hace hoy
 

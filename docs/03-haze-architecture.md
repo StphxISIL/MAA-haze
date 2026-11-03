@@ -75,7 +75,7 @@ El detalle es la única pantalla que no está en la barra. Se abre con `ProductD
 - **El servicio web** | `https://stphxlb.alwaysdata.net/productos.php` devuelve un arreglo JSON con los cafés de la tabla.
 - **La llamada** | `fetchProducts` abre un `Thread`, porque Android no deja usar la red en el hilo de la pantalla, y vuelve con `runOnUiThread`.
 - **La lectura** | `parseProducts` convierte cada fila en un `Product`. El servicio manda los números como texto, por eso `idproducto` pasa por `toInt()` y `disponible` se compara con `"1"`.
-- **Las fotos** | la tabla no trae fotos: todas las tarjetas usan `start_photo`.
+- **Las fotos** | la tabla no trae fotos, así que hay una por categoría: `drinkPhoto(category)` (en `components/DrinkPhoto.kt`) elige entre las cinco de `res/drawable-nodpi/` y, si la categoría es nueva, usa `start_photo`.
 
 ## El tema
 

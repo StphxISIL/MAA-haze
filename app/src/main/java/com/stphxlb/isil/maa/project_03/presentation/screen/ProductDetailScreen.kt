@@ -29,6 +29,7 @@ import com.stphxlb.isil.maa.project_03.R
 import com.stphxlb.isil.maa.project_03.components.EmberButton
 import com.stphxlb.isil.maa.project_03.components.HazeDestination
 import com.stphxlb.isil.maa.project_03.components.HazeScaffold
+import com.stphxlb.isil.maa.project_03.components.drinkPhoto
 import com.stphxlb.isil.maa.project_03.components.QuantityStepper
 import com.stphxlb.isil.maa.project_03.components.SizeCard
 import com.stphxlb.isil.maa.project_03.data.model.money
@@ -78,7 +79,7 @@ fun ProductDetailScreen(
                 .padding(bottom = AppTheme.spacing.large)
         ) {
             Image(
-                painter = painterResource(R.drawable.start_photo),
+                painter = painterResource(drinkPhoto(category)),
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()

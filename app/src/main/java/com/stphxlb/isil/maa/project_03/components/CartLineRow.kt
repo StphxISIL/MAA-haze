@@ -53,7 +53,7 @@ fun CartLineRow(
         horizontalArrangement = Arrangement.spacedBy(AppTheme.spacing.small)
     ) {
         Image(
-            painter = painterResource(R.drawable.start_photo),
+            painter = painterResource(drinkPhoto(line.category)),
             contentDescription = null,
             modifier = Modifier
                 .size(64.dp)

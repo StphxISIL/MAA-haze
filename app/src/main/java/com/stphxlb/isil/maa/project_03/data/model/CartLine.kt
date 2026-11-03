@@ -6,6 +6,7 @@ import java.util.Locale
 // La plantilla muestra S, M y L con precios distintos. Acá la tabla trae un solo precio.
 data class CartLine(
     val name: String,
+    val category: String, // para elegir su foto en el pedido
     val size: String,
     val quantity: Int,
     val price: String

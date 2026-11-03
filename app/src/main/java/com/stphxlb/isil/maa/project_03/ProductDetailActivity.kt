@@ -44,6 +44,7 @@ class ProductDetailActivity : ComponentActivity() {
                         Cart.add(
                             CartLine(
                                 name = name,
+                                category = category,
                                 size = size,
                                 quantity = quantity,
                                 price = price

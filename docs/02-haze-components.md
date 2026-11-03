@@ -54,6 +54,7 @@ Recibe `selected` y `onNavigate`.
 | `CartLineRow` | Una línea del pedido: foto, nombre, tamaño, precio, `QuantityStepper` y la X para quitarla. | `line`, `onDecrease`, `onIncrease`, `onRemove` | El pedido |
 | `FeaturedDrink` | La tarjeta grande: foto con un velo oscuro, categoría, nombre y precio encima. | `product`, `onClick` | La carta, primer café |
 | `DrinkCard` | La tarjeta chica: foto arriba, nombre y precio abajo. | `product`, `onClick` | La carta, fila de los demás |
+| `drinkPhoto` | No es un componente: es la función que elige la foto según la categoría (Espresso, Filtro, Frío, Té o Pastelería). | `category` | `FeaturedDrink`, `DrinkCard`, `CartLineRow` y el detalle |
 | `HazeDialog` | El aviso de la app, con fondo de tarjeta, bordes de 24 dp y Confirmar como `EmberButton`. | `title`, `message`, `confirmText`, `dismissText`, `onConfirm`, `onDismiss` | Hacer pedido |
 
 ## Por qué así

@@ -8,6 +8,10 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en [Versiones](../versions/00-versions-index.md).
 
+## lp3.4.1 | Fix III | 2026-11-02
+
+**Cada categoría con su foto.** Espresso, Filtro, Frío, Té y Pastelería tienen su propia foto en la carta, el detalle y el pedido, en tonos oscuros como la plantilla. Un brownie ya no sale con un latte.
+
 ## lp3.4.0 | Feature IV | 2026-11-02
 
 **Más cerca de Ember.** Los botones llevan el degradado ámbar de la plantilla y la barra de abajo tiene Carta como botón central elevado.

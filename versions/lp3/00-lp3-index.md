@@ -10,6 +10,7 @@ De la más nueva a la más vieja.
 
 | Versión | Fecha | Tipo | Qué pasó |
 |---|---|---|---|
+| [lp3.4.1](lp3.4.1/01-lp3.4.1-changes.md) | 2026-11-02 | Fix III | Cada categoría tiene su foto: un brownie ya no sale con un latte. |
 | [lp3.4.0](lp3.4.0/01-lp3.4.0-changes.md) | 2026-11-02 | Feature IV | Haze se parece más a la plantilla Ember: botones con degradado, barra con botón central, tarjetas de tamaño y un pedido que se puede editar. |
 | [lp3.3.7](lp3.3.7/01-lp3.3.7-changes.md) | 2026-11-02 | Fix II | Las carpetas siguen la demo de componentes del curso: las pantallas van en presentation y los datos en data. |
 | [lp3.3.6](lp3.3.6/01-lp3.3.6-changes.md) | 2026-11-02 | Fix | Salen los recursos que no eran de la cafetería, atrás desde el pedido vuelve a la carta y los textos se corrigen. |
