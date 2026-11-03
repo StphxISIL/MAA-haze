@@ -8,6 +8,12 @@ status: draft
 
 Cómo llegó a ser lo que es. La numeración está en [Versiones](../versions/00-versions-index.md).
 
+## lp3.4.2 | Fix IV | 2026-11-02
+
+**Pestañas con fundido.** Cambiar entre Inicio, Carta y Pedido ya no desliza la pantalla: la nueva aparece con un fundido suave.
+
+**Barra alineada.** El botón Carta sigue elevado, pero su texto está a la altura de Inicio y Pedido.
+
 ## lp3.4.1 | Fix III | 2026-11-02
 
 **Cada categoría con su foto.** Espresso, Filtro, Frío, Té y Pastelería tienen su propia foto en la carta, el detalle y el pedido, en tonos oscuros como la plantilla. Un brownie ya no sale con un latte.

@@ -67,6 +67,7 @@ Las pantallas no llaman a `startActivity` para moverse por la barra. Llaman a `o
 1. `HazeDestination.activityClass()` dice qué Activity corresponde a cada destino: `HOME` es la portada, `MENU` la carta y `ORDER` el pedido.
 2. Si la pantalla actual ya es ese destino, no hace nada.
 3. Si no, abre la Activity con `FLAG_ACTIVITY_REORDER_TO_FRONT`: si ya estaba abierta, la trae adelante con su estado, en vez de crear otra.
+4. La transición es un fundido propio de 220 ms (`res/anim/haze_fade_in.xml` y `haze_fade_out.xml`), que se pasa con `ActivityOptions.makeCustomAnimation`. Cambiar de pestaña no es entrar a otra pantalla, así que no se usa el deslizamiento de Android. Abrir el detalle sí lo conserva.
 
 El detalle es la única pantalla que no está en la barra. Se abre con `ProductDetailActivity.open(activity, product)`, que pasa los datos del café en el `Intent`, y marca Carta en la barra porque se entra desde ahí.
 

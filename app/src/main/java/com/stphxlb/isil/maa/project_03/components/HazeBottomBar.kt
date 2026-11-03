@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.layout
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.stphxlb.isil.maa.project_03.R
@@ -96,7 +97,7 @@ fun HazeBarItem(
     }
 }
 
-// El botón del medio: cuadrado con el degradado ámbar, subido 16 dp con offset para que sobresalga.
+// El botón del medio: cuadrado con el degradado ámbar, subido 16 dp con raise para que sobresalga.
 // El icono va siempre oscuro sobre el ámbar; el texto de abajo marca si es la pantalla actual.
 @Composable
 fun HazeBarCenterItem(
@@ -114,7 +115,7 @@ fun HazeBarCenterItem(
     ) {
         Box(
             modifier = Modifier
-                .offset(y = (-16).dp)
+                .raise(16.dp)
                 .shadow(8.dp, shape)
                 .clip(shape)
                 .background(EmberGradient)
@@ -125,8 +126,19 @@ fun HazeBarCenterItem(
         }
         Text(
             label,
-            color = if (selected) AppPrimary else AppSecondary,
-            modifier = Modifier.offset(y = (-8).dp)
+            color = if (selected) AppPrimary else AppSecondary
         )
+    }
+}
+
+// Sube el cuadrado sin que la barra lo cuente como alto: mide el cuadrado,
+// dice que ocupa "amount" menos y lo dibuja "amount" más arriba.
+// Así sobresale de la barra y su texto queda a la misma altura que Inicio y Pedido.
+// Con offset solo, el espacio vacío se quedaba abajo y el texto subía.
+private fun Modifier.raise(amount: Dp): Modifier = layout { measurable, constraints ->
+    val placeable = measurable.measure(constraints)
+    val shift = amount.roundToPx()
+    layout(placeable.width, placeable.height - shift) {
+        placeable.place(0, -shift)
     }
 }

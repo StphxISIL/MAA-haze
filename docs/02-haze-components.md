@@ -39,7 +39,7 @@ Recibe `title`, `cartCount`, `onCartClick` y `onBackClick` (opcional).
 
 ### `HazeBottomBar`, `HazeBarItem` y `HazeBarCenterItem`
 
-Tres botones: Inicio, Carta y Pedido. `HazeDestination` es la lista de esos tres destinos (`HOME`, `MENU`, `ORDER`). `HazeBarItem` es un botón de los lados: icono arriba, texto abajo, ámbar si está elegido y café claro si no. `HazeBarCenterItem` es el del medio, como en la plantilla: un cuadrado con el degradado ámbar que sobresale de la barra (`offset` hacia arriba y sombra).
+Tres botones: Inicio, Carta y Pedido. `HazeDestination` es la lista de esos tres destinos (`HOME`, `MENU`, `ORDER`). `HazeBarItem` es un botón de los lados: icono arriba, texto abajo, ámbar si está elegido y café claro si no. `HazeBarCenterItem` es el del medio, como en la plantilla: un cuadrado con el degradado ámbar que sobresale de la barra (`raise`, que lo sube sin que la barra cuente ese alto, y sombra). Su texto queda a la misma altura que los otros dos.
 
 Recibe `selected` y `onNavigate`.
 
